@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
--- Dumped by pg_dump version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
+-- Dumped from database version 12.17 (Ubuntu 12.17-1.pgdg22.04+1)
+-- Dumped by pg_dump version 12.17 (Ubuntu 12.17-1.pgdg22.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -51,7 +51,7 @@ CREATE TABLE public.appointments (
     appointment_id integer NOT NULL,
     customer_id integer,
     service_id integer,
-    "time" character varying(50) NOT NULL
+    "time" character varying(15) NOT NULL
 );
 
 
@@ -173,61 +173,51 @@ ALTER TABLE ONLY public.services ALTER COLUMN service_id SET DEFAULT nextval('pu
 -- Data for Name: appointments; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.appointments VALUES (48, 179, 1, '8am');
 
 
 --
 -- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.customers VALUES (1, '0', 'vidar');
-INSERT INTO public.customers VALUES (2, '1', 'BOLOLO');
-INSERT INTO public.customers VALUES (5, 'FakeTime', '');
-INSERT INTO public.customers VALUES (9, '3', 'MAMAK');
-INSERT INTO public.customers VALUES (10, '[D', 'da');
-INSERT INTO public.customers VALUES (11, '5', 'c');
-INSERT INTO public.customers VALUES (24, '', '');
-INSERT INTO public.customers VALUES (104, '6', 'm');
-INSERT INTO public.customers VALUES (105, '77', 'a');
-INSERT INTO public.customers VALUES (106, '88', 'd');
-INSERT INTO public.customers VALUES (107, '557*', 'zds');
-INSERT INTO public.customers VALUES (108, '5875', 'zada');
-INSERT INTO public.customers VALUES (109, '8845', 'ada');
-INSERT INTO public.customers VALUES (121, '6545', 'azd');
-INSERT INTO public.customers VALUES (179, '06', 'youssef');
-INSERT INTO public.customers VALUES (195, 'BadInput', '1');
+INSERT INTO public.customers VALUES (1, '555-555', 'mamak');
+INSERT INTO public.customers VALUES (3, '1', '1');
+INSERT INTO public.customers VALUES (4, '3', '5');
+INSERT INTO public.customers VALUES (5, '06', 'a');
+INSERT INTO public.customers VALUES (8, 'FakeTime', '');
+INSERT INTO public.customers VALUES (14, '', '');
+INSERT INTO public.customers VALUES (18, '88', 'TOTO');
 
 
 --
 -- Data for Name: services; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.services VALUES (1, 'Haircut and Styling');
-INSERT INTO public.services VALUES (2, 'Hair Coloring');
-INSERT INTO public.services VALUES (3, 'Manicures and Pedicures');
-INSERT INTO public.services VALUES (4, 'Facials and Skin Treatments');
-INSERT INTO public.services VALUES (5, 'Waxing and Hair Removal');
+INSERT INTO public.services VALUES (1, 'cut');
+INSERT INTO public.services VALUES (2, 'color');
+INSERT INTO public.services VALUES (3, 'perm');
+INSERT INTO public.services VALUES (4, 'style');
+INSERT INTO public.services VALUES (5, 'trim');
 
 
 --
 -- Name: appointments_appointment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.appointments_appointment_id_seq', 106, true);
+SELECT pg_catalog.setval('public.appointments_appointment_id_seq', 24, true);
 
 
 --
 -- Name: customers_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.customers_customer_id_seq', 238, true);
+SELECT pg_catalog.setval('public.customers_customer_id_seq', 47, true);
 
 
 --
 -- Name: services_service_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.services_service_id_seq', 5, true);
+SELECT pg_catalog.setval('public.services_service_id_seq', 7, true);
 
 
 --
